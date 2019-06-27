@@ -1,0 +1,10 @@
+<main>
+
+<form action="/{{driver.tractorId}}/driver/{{driver._id}}?_method=PUT" method="POST">
+			<input type="text" name="name" value="{{driver.name}}">
+			<input type="text" name="age" value="{{driver.age}}"> 
+			<input type="text" hidden="hidden" name="tractorId" value={{driver.tractorId}}>
+			<input type="submit" value="Submit">
+		</form>
+
+</main>

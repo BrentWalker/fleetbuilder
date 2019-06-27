@@ -1,0 +1,12 @@
+<main>
+    <a href="/{{trailer.tractorId}}"> Back to my tractor</a>
+<h3>{{trailer.trailer_number}}</h3>
+<h3>{{trailer.trailer_type}}</h3>
+
+<a href="/{{trailer.tractorId}}/trailer/{{trailer._id}}/edit"> edit this trailer</a>
+
+    <form action="/{{trailer.tractorId}}/trailer/{{trailer._id}}?_method=DELETE" method="POST">
+		<input type="submit" value="delete this trailer">
+	</form>
+
+</main>

@@ -1,0 +1,12 @@
+<main>
+    <a href="/{{driver.tractorId}}"> Back to my tractor</a>
+<h3>{{driver.name}}</h3>
+<h3>{{driver.age}}</h3>
+
+<a href="/{{driver.tractorId}}/driver/{{driver._id}}/edit"> edit this driver</a>
+
+    <form action="/{{driver.tractorId}}/driver/{{driver._id}}?_method=DELETE" method="POST">
+		<input type="submit" value="delete this driver">
+	</form>
+
+</main>

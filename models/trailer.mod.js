@@ -3,7 +3,7 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 const ObjectId = mongoose.Schema.Types.ObjectId
 
-// create your donut schema:
+// create your Trailer schema:
 const Trailer = new Schema({
     trailer_number: Number,
     trailer_type: String,

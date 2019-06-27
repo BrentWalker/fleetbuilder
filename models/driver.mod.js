@@ -4,7 +4,7 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 const ObjectId = mongoose.Schema.Types.ObjectId
 
-// create your donut schema:
+// create your Driver schema:
 const Driver = new Schema({
     name: String,
     age: Number,

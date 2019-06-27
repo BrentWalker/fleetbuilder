@@ -1,0 +1,20 @@
+<main>
+	<h2>All Tractors</h2>
+
+{{#each tractors}}
+			<div class="tractor-container">
+
+				<p> {{tractor_number}} </p>
+                <p> {{tractor_make}} </p>
+
+
+				<a href="{{_id}}"><h3>Expand</h3></a>
+
+				
+
+			</div>
+
+		{{/each}}
+
+<a href="/new"><h2>add new tractor</h2></a>
+</main>
