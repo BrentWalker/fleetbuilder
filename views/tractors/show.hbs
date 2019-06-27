@@ -31,8 +31,8 @@
 
 			<h4>add Trailer:</h4>
 		<form action="{{tractor._id}}/trailer" method="POST">
-			<input type="text" name="trailer number" placeholder="trailer number">
-			<input type="text" name="trailer type" placeholder="trailer type">
+			<input type="text" name="trailer_number" placeholder="trailer number">
+			<input type="text" name="trailer_type" placeholder="trailer type">
 			{{!-- HERE IS WHERE IM PUTTING IN THE RELATED KEY THE MODEL 1'S ID INTO THE MODEL2's FIELD NAMED "tractorID" --}}
 			<input type="text" name="tractorId" hidden="hidden" value={{tractor._id}}>
 			<input type="submit" value="Submit">
