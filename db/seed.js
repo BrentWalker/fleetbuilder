@@ -2,7 +2,6 @@
 // REQUIREMENTS
 //= =====================
 // Make sure that when you run the seeds file, all of the
-// fields are saved to the database.
 
 let Tractor = require('../models/tractor.mod')
 let Driver = require('../models/driver.mod')
@@ -21,11 +20,10 @@ let newTractors = [
     tractor_make: 'Kenworth'
   },
   {
-    tractor_number: '1104',
+    tractor_number: '1190',
     tractor_make: 'Kenworth'
   }
 ]
-
 Tractor.remove({})
   .then(() => { 
     Driver.remove({}) })

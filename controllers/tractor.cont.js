@@ -33,9 +33,7 @@ const tractorController = {
         console.log(tractor)
         console.log(driver)
         res.render("tractors/show", { tractor, driver });
-      });
-      
-     
+      });     
     });
   },
   //= =====================

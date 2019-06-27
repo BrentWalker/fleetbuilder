@@ -2,14 +2,13 @@
 const Driver = require("../models/driver.mod");
 
 const driverController = {
-
   //= =====================
   // SHOW
   //= =====================
-  
+
   show: function(req, res) {
     Driver.findById(req.params.driverId).then(driver => {
-      res.render("driver/show", {driver});
+      res.render("driver/show", { driver });
     });
   },
 
@@ -24,7 +23,7 @@ const driverController = {
   //= =====================
   // EDIT
   //= =====================
- 
+
   edit: function(req, res) {
     Driver.findById(req.params.driverId).then(driver => {
       res.render("driver/edit", { driver });
@@ -34,11 +33,13 @@ const driverController = {
   // UPDATE
   //= =====================
 
-  // redirects back to the Driver SHOW PAGE 
+  // redirects back to the Driver SHOW PAGE
   update: function(req, res) {
-    Driver.findByIdAndUpdate(req.params.driverId, req.body, { new: true }).then(() => {
-      res.redirect(`/${req.params.id}/driver/${req.params.driverId}`);
-    });
+    Driver.findByIdAndUpdate(req.params.driverId, req.body, { new: true }).then(
+      () => {
+        res.redirect(`/${req.params.id}/driver/${req.params.driverId}`);
+      }
+    );
   },
 
   //= =====================
@@ -53,4 +54,3 @@ const driverController = {
 };
 
 module.exports = driverController;
-
