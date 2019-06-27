@@ -2,13 +2,17 @@
 const Trailer = require("../models/trailer.mod");
 
 const trailerController = {
+
   //= =====================
   // SHOW
   //= =====================
-
+  
   show: function(req, res) {
     Trailer.findById(req.params.trailerId).then(trailer => {
-      res.render("trailer/show", { trailer });
+      res.render("trailers/show", {trailer});
+    })
+    .catch(err => {
+      console.log(err)
     });
   },
 
@@ -23,21 +27,19 @@ const trailerController = {
   //= =====================
   // EDIT
   //= =====================
-
+ 
   edit: function(req, res) {
     Trailer.findById(req.params.trailerId).then(trailer => {
-      res.render("trailer/edit", { trailer });
+      res.render("trailers/edit", { trailer });
     });
   },
   //= =====================
   // UPDATE
   //= =====================
 
-  // redirects back to the Trailer SHOW PAGE
+  // redirects back to the Donut SHOW PAGE 
   update: function(req, res) {
-    Trailer.findByIdAndUpdate(req.params.trailerId, req.body, {
-      new: true
-    }).then(() => {
+    Trailer.findByIdAndUpdate(req.params.trailerId, req.body, { new: true }).then(() => {
       res.redirect(`/${req.params.id}/trailer/${req.params.trailerId}`);
     });
   },
@@ -54,3 +56,4 @@ const trailerController = {
 };
 
 module.exports = trailerController;
+

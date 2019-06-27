@@ -3,8 +3,8 @@
 //= =====================
 // require the tractor model
 const Tractor = require("../models/tractor.mod");
-const Driver = require('../models/driver.mod')
-// const Trailer = require('../models/trailer.mod')
+const Driver = require('../models/driver.mod');
+const Trailer = require('../models/trailer.mod');
 
 const tractorController = {
   //= =====================
@@ -28,12 +28,20 @@ const tractorController = {
   //= =====================
   // Create a function that renders a single tractor's show page
   show: function(req, res) {
-    Tractor.findById(req.params.id).then(tractor => {
-      Driver.find({tractorId: req.params.id}).then((driver)=>{
-        console.log(tractor)
-        console.log(driver)
-        res.render("tractors/show", { tractor, driver });
-      });     
+    let obj = {};
+    Tractor.findById(req.params.id).then(async tractor => {
+      console.log('TRACTOR', tractor)
+      obj.tractor = tractor;
+      await Driver.find({tractorId: req.params.id}).then((driver)=>{
+        console.log('DRIVERS', driver)
+        obj.driver = driver;
+      });
+      await Trailer.find({tractorId: req.params.id}).then((trailer)=>{
+        console.log('TRAILERS', trailer)
+        obj.trailer = trailer;
+      });
+      console.log("OBJECT", obj)
+      res.render("tractors/show", obj);
     });
   },
   //= =====================

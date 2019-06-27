@@ -1,8 +1,10 @@
 <main>
-	<form action="/{{trailer.tractorId}}/trailer/{{trailer._id}}?_method=PUT" method="POST">
-		<input type="text" name="name" value="{{trailer.name}}">
-		<input type="text" name="age" value="{{trailer.age}}">
-		<input type="text" hidden="hidden" name="tractorId" value={{trailer.tractorId}}>
-		<input type="submit" value="Submit">
-	</form>
+
+<form action="/{{trailer.tractorId}}/trailer/{{trailer._id}}?_method=PUT" method="POST">
+			<input type="text" name="trailer_number" value="{{trailer.trailer_number}}">
+			<input type="text" name="trailer_type" value="{{trailer.trailer_type}}"> 
+			<input type="text" hidden="hidden" name="tractorId" value={{trailer.tractorId}}>
+			<input type="submit" value="Submit">
+		</form>
+
 </main>

@@ -1,15 +1,25 @@
 <main>
+
 	<h2>Tractor:
+
 		{{tractor.tractor_number}}
+
 	</h2>
+
 	<a href="/">Return to Home Page</a>
+
 	<div class="tractor-container-show">
 		<h2 id="tractor-number"> tractor number:
+
 			{{tractor.tractor_number}}
+
 		</h2>
 		<h2 id="tractor-make"> tractor make:
+
 			{{tractor.tractor_make}}
+
 		</h2>
+
 		<h4>add Driver:</h4>
 		<form action="{{tractor._id}}/driver" method="POST">
 			<input type="text" name="name" placeholder="name">
@@ -18,7 +28,8 @@
 			<input type="text" name="tractorId" hidden="hidden" value={{tractor._id}}>
 			<input type="submit" value="Submit">
 		</form>
-		<h4>add Trailer:</h4>
+
+			<h4>add Trailer:</h4>
 		<form action="{{tractor._id}}/trailer" method="POST">
 			<input type="text" name="trailer_number" placeholder="trailer number">
 			<input type="text" name="trailer_type" placeholder="trailer type">
@@ -26,21 +37,32 @@
 			<input type="text" name="tractorId" hidden="hidden" value={{tractor._id}}>
 			<input type="submit" value="Submit">
 		</form>
+
 		<h3>Current Driver: </h3>
-		{{#each drivers}}
+		{{#each driver}}
 		<a href='/{{../tractor._id}}/driver/{{_id}}'>{{name}}</a>
+
 		<br />
 		{{/each}}
-		<h3>Current Trailer: </h3>
-		{{#each trailers}}
+
+
+				<h3>Current Trailer: </h3>
+		{{#each trailer}}
 		<a href='/{{../tractor._id}}/trailer/{{_id}}'>{{trailer_number}}</a>
+
 		<br />
 		{{/each}}
+
+
+
+
 		<a href="{{tractor._id}}/edit">
 			<h3>Edit tractor</h3>
 		</a>
 		<form action="/{{tractor._id}}?_method=DELETE" method="POST">
 			<input type="submit" value="delete this tractor">
 		</form>
+
 	</div>
+
 </main>
